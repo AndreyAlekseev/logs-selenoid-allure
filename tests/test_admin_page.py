@@ -1,7 +1,10 @@
+import allure
 from page_objects import AdminPage
 import pytest
 
 
+@allure.title("Contains elements on admin page")
+@allure.severity(allure.severity_level.NORMAL)
 @pytest.mark.nondestructive
 def test_admin_page(browser, base_url):
     """"Checking to available web elements on product card."""
@@ -14,6 +17,10 @@ def test_admin_page(browser, base_url):
     assert admin_page.username_field_is_displayed()
 
 
+@allure.feature("Authorization")
+@allure.story("invalid credentials")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.title("Validation on admin page")
 @pytest.mark.nondestructive
 def test_validation(browser, base_url):
     """Enter invalid data in input fields"""
@@ -23,6 +30,10 @@ def test_validation(browser, base_url):
     assert admin_page.error_message_is_displayed()
 
 
+@allure.feature("Authorization")
+@allure.story("valid credentials")
+@allure.severity(allure.severity_level.BLOCKER)
+@allure.title("Authorization on admin page")
 @pytest.mark.nondestructive
 def test_enter_to_backoffice(browser):
     """Enter invalid data in input fields."""

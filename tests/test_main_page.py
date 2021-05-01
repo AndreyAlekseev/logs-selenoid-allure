@@ -1,7 +1,9 @@
 from page_objects import MainPage
 import pytest
+import allure
 
 
+@allure.title("Contains elements on main page")
 @pytest.mark.nondestructive
 def test_main_page(browser, base_url):
     """"Checking 5 elements on main page."""

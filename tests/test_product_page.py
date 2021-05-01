@@ -1,7 +1,10 @@
 from page_objects import ProductPage
 import pytest
+import allure
 
 
+@pytest.mark.slow_test
+@allure.title("Contains elements on product page")
 @pytest.mark.nondestructive
 def test_product_page(browser, base_url):
     """"Checking to available web elements on product card."""

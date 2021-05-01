@@ -4,6 +4,9 @@ __pycache__/
 .idea/
 .DS_Store
 .vscode
+.allure
+/*/allure-results/
+allure*/
 
 # C extensions
 *.so

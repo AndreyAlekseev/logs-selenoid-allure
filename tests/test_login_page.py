@@ -1,7 +1,9 @@
 from page_objects import LoginPage
 import pytest
+import allure
 
 
+@allure.title("Contains elements on login page")
 @pytest.mark.nondestructive
 def test_login_page(browser, base_url):
     """"Checking to available web elements on product card."""
